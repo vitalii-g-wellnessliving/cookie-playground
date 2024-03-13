@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: bitnami/nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/opt/bitnami/nginx/conf/server_blocks:ro
+    depends_on:
+      - site-a
+      - site-b
+
+  site-a:
+    image: php:7.4-apache
+    volumes:
+      - ./site-a:/var/www/html
+    environment:
+      VIRTUAL_HOST: site-a.example.local
+
+  site-b:
+    image: php:7.4-apache
+    volumes:
+      - ./site-b:/var/www/html
+    environment:
+      VIRTUAL_HOST: site-b.example.local
+
