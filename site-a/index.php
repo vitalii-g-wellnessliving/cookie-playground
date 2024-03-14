@@ -3,12 +3,11 @@
   <body>
     <script src="/js/index.js"></script>
     <h1>Site A</h1>
-    <br>
     <div style="padding: 10px;">
-      <button onclick="get('https://site-b.example.local/login.php')">Login to Site B</button>
+      <button onclick="get('https://site-b.example.local/login.php')">Login</button>
     </div>
     <div style="padding: 10px;">
-      <button onclick="get('https://site-b.example.local')">Send some request to site B</button>
+      <button onclick="get('https://site-b.example.local')">Generic request</button>
     </div>
   </body>
 </html>
